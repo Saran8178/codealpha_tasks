@@ -1,0 +1,11 @@
+{% extends 'tracker/base.html' %}
+{% block content %}
+    <h2>{{ project.name }}</h2>
+    <p>{{ project.description }}</p>
+    <h3>Tasks</h3>
+    <ul>
+    {% for task in tasks %}
+        <li>{{ task.title }} - {% if task.completed %}✔{% else %}❌{% endif %}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
